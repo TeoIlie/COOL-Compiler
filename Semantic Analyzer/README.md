@@ -11,23 +11,23 @@ https://discord.com/channels/928849746322419764/933074767098052630/9527711439982
 The primary goal of this assignment was to write code for each class expression outlining the type checking rules, called tc(). These were all based on the Cool manual, but translated into C code.
 
 1. `formal_class::install_formal`: Ensures that the type declaration is not SELF_TYPE, the formal parameter is defined, the name is not ‘self’ and it is not multiply defined. Add the variable to the table.
-2. bool_const_class::tc we assume that the type is Bool.
-3. string_const_class::tc we assume the type is Str.
-4. sub_class::tc ensure both expressions have Int type for subtraction.
-5. mul_class::tc basically same as sub_class -> ensure both are Ints for multiplication.
-6. divide_class::tc division needs to have 2 Ints. 
-7. neg_class::tc primitive logical negation is type Int.
-8. lt_class::tc less than class requires 2 Int’s to compare and returns a Bool.
-9. leq_class::tcc similar to above; less than or equal compares 2 Int’s, and returns a Bool. 
-10. comp_class::tc compare class takes a Boolean e1 and returns a type Bool.
-11. object_class::tc object class makes sure the identifier is declared, and then returns the type from the var_lookup function that searches the symbol table.
-12. isvoid_class::tc a test of isvoid always has type Bool.
-13. eq_class::tc ensures you check an Int with an Int, or Bool with a Bool, but not Int with Bool. Returns a Bool result.
-14. assign_class::tc ensures the name is not ‘self’, that the name exists in var_lookup, and that the class is declared correctly. type_leq ensures the class is a child class, so that it has all the required attributes and methods.
-15. static_dispatch_class::tc this is the most complex type check method. like regular dispatch_class above it, each subexpression is type-checked first. The types of arguments in the dispatch must conform to the declared types for arguments. The result type may be the type of the first expression or SELF_TYPE. Static dispatch differs because only the type T_0 must conform to T, for class T of method f given to dispatch. Assertions are: type_name cannot be SELF_TYPE, class must be defined, the expression must conform to static dispatch type, the method must be defined, the method has the correct number of arguments, and method parameters must conform to declared types.
-16. cond_class::tc  checks conditionals and ensures the predicate is Bool. returns type using type_lub, which uses the least upper bound function.
-17. loop_class::tc checks loop condition is type Bool, and returns type Object.
-18. typcase_class::tc checks case statements. Each branch is type-checked. Type of the entire case is the join of the cases, again using type_lub. Errors are duplicate branch, class not defined in a statement, name == self, and SELF_TYPE in case branch. 
+2. `bool_const_class::tc` we assume that the type is Bool.
+3. `string_const_class::tc` we assume the type is Str.
+4. `sub_class::tc` ensure both expressions have Int type for subtraction.
+5. `mul_class::tc` basically same as sub_class -> ensure both are Ints for multiplication.
+6. `divide_class::tc` division needs to have 2 Ints. 
+7. `neg_class::tc` primitive logical negation is type Int.
+8. `lt_class::tc` less than class requires 2 Int’s to compare and returns a Bool.
+9. `leq_class::tc` similar to above; less than or equal compares 2 Int’s, and returns a Bool. 
+10.`comp_class::tc` compare class takes a Boolean e1 and returns a type Bool.
+11. `object_class::tc` object class makes sure the identifier is declared, and then returns the type from the var_lookup function that searches the symbol table.
+12. `isvoid_class::tc` a test of isvoid always has type Bool.
+13. `eq_class::tc` ensures you check an Int with an Int, or Bool with a Bool, but not Int with Bool. Returns a Bool result.
+14. `assign_class::tc` ensures the name is not ‘self’, that the name exists in var_lookup, and that the class is declared correctly. type_leq ensures the class is a child class, so that it has all the required attributes and methods.
+15. `static_dispatch_class::tc` this is the most complex type check method. like regular dispatch_class above it, each subexpression is type-checked first. The types of arguments in the dispatch must conform to the declared types for arguments. The result type may be the type of the first expression or SELF_TYPE. Static dispatch differs because only the type T_0 must conform to T, for class T of method f given to dispatch. Assertions are: type_name cannot be SELF_TYPE, class must be defined, the expression must conform to static dispatch type, the method must be defined, the method has the correct number of arguments, and method parameters must conform to declared types.
+16. `cond_class::tc`  checks conditionals and ensures the predicate is Bool. returns type using type_lub, which uses the least upper bound function.
+17. `loop_class::tc` checks loop condition is type Bool, and returns type Object.
+18. `typcase_class::tc` checks case statements. Each branch is type-checked. Type of the entire case is the join of the cases, again using type_lub. Errors are duplicate branch, class not defined in a statement, name == self, and SELF_TYPE in case branch. 
 
 
 ## Error Handling and Testing:
