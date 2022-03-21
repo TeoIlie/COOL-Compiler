@@ -1,0 +1,2 @@
+# COOL-Compiler
+Compiler for the COOL language, including lexer, parser, and semantic analyzer. COOL stands for Classroom Object Oriented Language, and was developed by Alexander Aiken to help students learn compilers: https://www.google.com/url?sa=t&amp;rct=j&amp;q=&amp;esrc=s&amp;source=web&amp;cd=&amp;cad=rja&amp;uact=8&amp;ved=2ahUKEwj1_f211df2AhVGV80KHTv0CCUQFnoECA8QAQ&amp;url=https%3A%2F%2Ftheory.stanford.edu%2F~aiken%2Fsoftware%2Fcool%2Fcool-manual.pdf&amp;usg=AOvVaw3Xt0hahYGoIggNsfehY2Jq 
