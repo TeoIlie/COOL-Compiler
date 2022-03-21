@@ -10,7 +10,7 @@ https://discord.com/channels/928849746322419764/933074767098052630/9527711439982
 ## Semantic Analysis Description
 The primary goal of this assignment was to write code for each class expression outlining the type checking rules, called tc(). These were all based on the Cool manual, but translated into C code.
 
-1. formal_class::install_formal: Ensures that the type declaration is not SELF_TYPE, the formal parameter is defined, the name is not ‘self’ and it is not multiply defined. Add the variable to the table.
+1. `formal_class::install_formal`: Ensures that the type declaration is not SELF_TYPE, the formal parameter is defined, the name is not ‘self’ and it is not multiply defined. Add the variable to the table.
 2. bool_const_class::tc we assume that the type is Bool.
 3. string_const_class::tc we assume the type is Str.
 4. sub_class::tc ensure both expressions have Int type for subtraction.
